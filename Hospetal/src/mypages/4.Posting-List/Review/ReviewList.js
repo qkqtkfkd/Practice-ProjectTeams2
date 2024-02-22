@@ -39,12 +39,12 @@ const ReviewList = (props) => {
           ? PostingR.map((item, index) => {
               return (
                 <CommonTableRow key={index}>
-                  <td>
+                  <CommonTableColumn>
                     <input type={item.checkbox} />
-                  </td>
-                  <td>{item.no}</td>
-                  <td>{item.company}</td>
-                  <td>
+                  </CommonTableColumn>
+                  <CommonTableColumn>{item.no}</CommonTableColumn>
+                  <CommonTableColumn>{item.company}</CommonTableColumn>
+                  <CommonTableColumn>
                     {" "}
                     <p
                       onClick={() => {
@@ -53,8 +53,8 @@ const ReviewList = (props) => {
                     >
                       {item.title}
                     </p>
-                  </td>
-                  <td>{item.createDate}</td>
+                  </CommonTableColumn>
+                  <CommonTableColumn>{item.createDate}</CommonTableColumn>
                 </CommonTableRow>
               );
             })

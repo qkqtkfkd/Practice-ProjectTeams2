@@ -94,12 +94,7 @@ function Nav() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              to="/mbti"
-              className="nav-link"
-              style={getLinkStyle}
-              target="_blank"
-            >
+            <NavLink to="/mbti" className="nav-link" style={getLinkStyle}>
               MBTI
             </NavLink>
           </li>

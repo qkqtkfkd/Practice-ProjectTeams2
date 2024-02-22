@@ -1,13 +1,9 @@
 import "./MessageToUserButton.css";
 
-function MessageToUserButton({ children, onClick, onSendMessage }) {
-  const handleClick = () => {
-    onClick();
-  };
-
+function MessageToUserButton({ children, onClick }) {
   return (
     <div className="bottom-buttons">
-      <button onClick={onSendMessage} className="MessageToUserButton">
+      <button onClick={onClick} className="MessageToUserButton">
         <div className="button-wrapper">{children}</div>
       </button>
     </div>

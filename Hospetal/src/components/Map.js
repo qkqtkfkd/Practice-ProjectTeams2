@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import "./Map.css";
 import { getUserLocation } from "../utills/geolocation";
+const { kakao } = window;
 
 const Map = ({ mapRef, userLocation }) => {
   const mapContainer = useRef(null);
-  const { kakao } = window;
   const position = new kakao.maps.LatLng(36.328724, 127.423033);
   const mapOptions = {
     center: position,

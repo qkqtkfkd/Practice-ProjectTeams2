@@ -116,6 +116,7 @@
   font-size: 50px;
   margin-top: 1rem;
   pointer-events: none;
+  display: inline;
 }
 
 .btnWrapper {
@@ -129,12 +130,13 @@
   width: 50px;
 }
 
-.rating {
-  display: inline;
-}
-
 .review {
   padding: 28px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 1rem;
+  border-bottom: 2px solid var(--subColor);
 }
 
 .review h3 {
@@ -146,7 +148,8 @@
 .reviewContainer {
   width: 100%;
   max-width: 1120px;
-  height: 500px;
+  height: 100%;
+  position: relative;
 }
 
 .moreBtn {
@@ -158,6 +161,7 @@
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
+  margin-top: 1rem;
 }
 
 .moreBtn:hover {

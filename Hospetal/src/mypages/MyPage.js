@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 100%;
   background-color: #f8ebd8;
   display: flex;
+  position: relative;
 `;
 
 function MyPage() {

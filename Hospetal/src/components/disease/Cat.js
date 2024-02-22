@@ -8,6 +8,7 @@ import DiseaseTitleIcon from "./DiseaseTitleIcon";
 import styled from "styled-components";
 import catCursor from "../../assets/mouse_cat.png";
 import catCursorActive from "../../assets/mouse_cat_after.png";
+import foot from "../../assets/img/발바닥_or.png";
 
 const Cursor = styled.div`
   cursor: url(${catCursor}) 20 30, auto !important;
@@ -94,10 +95,7 @@ function Cat() {
               <Link to="/hospital" className={styles.linkButton}>
                 <button className={styles.bottomButton}>
                   병원 예약하기
-                  <img
-                    className={styles.bottomButtonImg}
-                    src="/img/발바닥_or.png"
-                  />
+                  <img className={styles.bottomButtonImg} src={foot} />
                 </button>
               </Link>
             </div>

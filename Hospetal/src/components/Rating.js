@@ -1,4 +1,4 @@
-import "./Rating.css";
+import "./RatingHospital.css";
 
 const RATINGS = [1, 2, 3, 4, 5];
 
@@ -9,7 +9,7 @@ function Star({
   onHover,
   shouldShowRating,
 }) {
-  const className = `Rating-star ${selected ? "selected" : ""}`;
+  const className = `RatingStar ${selected ? "selected" : ""}`;
 
   const handleClick = onSelect ? () => onSelect(rating) : undefined;
   const handleMouseOver = onHover ? () => onHover(rating) : undefined;

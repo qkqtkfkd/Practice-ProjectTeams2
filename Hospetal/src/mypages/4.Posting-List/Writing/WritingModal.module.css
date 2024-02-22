@@ -11,7 +11,6 @@
   /* align-items: center; */
   justify-content: center;
   position: relative;
-  height: 100%;
 }
 
 .post {
@@ -19,13 +18,13 @@
   padding: 3rem;
   display: grid;
   gap: 1rem;
-  grid-template-rows:6fr 1fr;
+  grid-template-rows: 6fr 1fr;
 }
 
 /* ////////// */
 .wordtext {
   display: grid;
-  grid-template-rows: 50px 260px 160px;
+  grid-template-rows: 0.5fr 2.5fr 1fr;
 }
 
 .head {
@@ -41,6 +40,7 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 2rem;
+  background-color: #d9d9d9;
   margin: 0;
 }
 .ico {
@@ -60,10 +60,8 @@
   border-bottom: 2px solid #ff9b50;
   padding: 1.5rem 0;
   display: grid;
-  grid-template-rows: 2fr 9fr;
-  /* height: 100%; */
 }
-.wordTitle {  
+.wordTitle {
   display: grid;
   grid-template-columns: 8fr 1.5fr;
   justify-content: space-between;
@@ -81,17 +79,12 @@
 }
 
 .word_p {
-  /* padding-top: 10px; */
+  padding-top: 10px;
 }
 
-/* /////코멘트///// */
-.commentss {
+/* /////다음///// */
+.next {
   padding: 1rem 0;
-gap: 10px;
-
-}
-
-.commentssbox{
   display: grid;
   grid-template-columns: auto 10fr auto;
   gap: 10px;

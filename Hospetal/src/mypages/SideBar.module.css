@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
   background-color: transparent;
   margin-bottom: 0;
 }
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* background-color: #ffc26f; */
+  background-color: #ffc26f;
   font-size: 18px;
 }
 

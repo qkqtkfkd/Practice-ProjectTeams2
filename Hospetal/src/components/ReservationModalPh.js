@@ -114,7 +114,7 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
           </div>
           <div className={styles.form}>
             <div className={styles.formItem}>
-              <label>보호자 성명</label>
+              <label className="label">보호자 성명</label>
               <input
                 type="text"
                 id="guardianName"
@@ -124,7 +124,9 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
               />
             </div>
             <div className={styles.formItem}>
-              <label htmlFor="petName">펫 이름</label>
+              <label htmlFor="petName" className="label">
+                펫 이름
+              </label>
               <input
                 type="text"
                 id="petName"
@@ -134,7 +136,9 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
               />
             </div>
             <div className={styles.formItem}>
-              <label htmlFor="petType">펫 종류</label>
+              <label htmlFor="petType" className="label">
+                펫 종류
+              </label>
               <select
                 id="petType"
                 value={petType}
@@ -159,7 +163,9 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
               />
             </div>
             <div className={styles.formItem}>
-              <label htmlFor="Date">예약일자</label>
+              <label htmlFor="Date" className="label">
+                예약일자
+              </label>
               <input
                 type="date"
                 id="Date"
@@ -168,7 +174,9 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
               />
             </div>
             <div className={styles.formItem}>
-              <label htmlFor="Symptom">증상 또는 병명</label>
+              <label htmlFor="Symptom" className="label">
+                증상 또는 병명
+              </label>
               <input
                 type="text"
                 id="Symptom"

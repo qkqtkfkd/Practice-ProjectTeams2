@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./shareIcon.module.css";
 import { CiFacebook } from "react-icons/ci";
+import share from "../../assets/img/Facebook_logo_r_FFC26F.svg";
 
 const FacebookShareButton = () => {
   const shareFacebook = () => {
@@ -10,7 +11,7 @@ const FacebookShareButton = () => {
     <div>
       <a href="/#" onClick={shareFacebook}>
         <img
-          src="/img/Facebook_logo_r_FFC26F.svg"
+          src={share}
           className={styles.facebook__icon}
           alt="facebook_icon"
         />

@@ -25,7 +25,6 @@
   background-color: transparent;
   color: var(--mainColor) !important;
   border: 1px solid var(--mainColor);
-  cursor: pointer;
   font-size: 14px;
 }
 
@@ -36,7 +35,7 @@
 
 .ReservationBtn:hover {
   background-color: #ff9b50 !important;
-  color: white;
+  color: white !important;
 }
 .ReservationBtn2:hover {
   background-color: #ff9b50 !important;
@@ -44,7 +43,7 @@
 }
 
 .ReservationBtn:hover .link {
-  color: white;
+  color: white !important;
 }
 
 .link {

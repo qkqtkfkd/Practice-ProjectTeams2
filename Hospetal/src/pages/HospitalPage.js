@@ -22,6 +22,7 @@ import paperplaneIcon from "../assets/icon/paper plane_w.svg";
 import linkcopyIcon from "../assets/icon/icon_linkcopy.svg";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import ChatModal from "../components/ChatModal";
+import ReviewRating from "../components/ReviewRating";
 
 const LIMIT = 3;
 

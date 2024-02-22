@@ -64,6 +64,8 @@ const ArticleContent = ({
     }
   }, [modalData]);
 
+  console.log(userData);
+
   useEffect(() => {
     const fetchCommentCount = async () => {
       try {

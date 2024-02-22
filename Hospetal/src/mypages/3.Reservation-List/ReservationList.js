@@ -4,7 +4,7 @@ import CommonTableRow from "../table/CommonTableRow";
 import Overlay from "../Overlay";
 import ReservationModal from "./ReservationModal";
 import { fetchReservation } from "../../api/firebase";
-
+import styles from "./RL.module.css";
 const ReservationList = (props) => {
   const [Reserv, setReserv] = useState([]);
   const [selectedReservationId, setSelectedReservationId] = useState(null);

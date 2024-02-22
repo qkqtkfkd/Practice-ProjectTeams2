@@ -12,7 +12,7 @@ import {
 } from "../api/firebase";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
+const ReservationModalHos = ({ isOpen, onClose, pharmacy }) => {
   const props = useLocation();
   const navigate = useNavigate();
   const { pathname } = props;
@@ -106,7 +106,7 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
           <div className={styles.header}>
             <h2 className={styles.title}>
               예약하기
-              <p> {pharmacy ? pharmacy.title : "Loading..."}</p>
+              <p> {hospital ? hospital.title : "Loading..."}</p>
             </h2>
             <button className={styles.closeButton} onClick={onClose}>
               <img src={closeIcon} className={styles.closeIcon} />
@@ -188,4 +188,4 @@ const ReservationModalPh = ({ isOpen, onClose, pharmacy }) => {
   );
 };
 
-export default ReservationModalPh;
+export default ReservationModalHos;

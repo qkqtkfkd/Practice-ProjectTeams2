@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import Overlay from "../Overlay";
 import ShopingModal from "./ShopingModal";
 
-function Shop(info) {
+function Shop({ points }) {
   const shoping = [
     {
       id: 1,
       label: "고구마 져키 50g (6개입)",
       alt: "pointshop_01",
-      price: "15,000냥",
+      price: 15000,
       url: require("../../assets/gallery/pointshop_01.png"),
     },
     {
@@ -89,7 +89,11 @@ function Shop(info) {
             <img
               src={shop.url}
               alt={shop.alt}
-              style={{ objectFit: "contain", width: "190px", height: "150px" }}
+              style={{
+                objectFit: "contain",
+                width: "190px",
+                height: "150px",
+              }}
             />
           </figure>
           <p className={style.shopItem}>{shop.label}</p>
@@ -117,6 +121,7 @@ function Shop(info) {
             <ShopingModal
               shoping={shoping.find((shop) => shop.id === selectedProductId)}
               setModalOpen={setModalOpen}
+              points={points}
             />
           )}
         </>

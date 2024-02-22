@@ -2,8 +2,39 @@ import style from "../../Modal.module.css";
 import { ReactComponent as Close } from "../../../assets/icon/icon-close_w.svg";
 import IMG from "../../../assets/gallery/꿀팁_02.png";
 import styless from "./CorrectionModal.module.css";
+import { useState, useEffect } from "react";
+import { collection, db, getDocs, getData } from "../../../api/firebase";
 
-function CorrectionModal({ setModalInOpen }) {
+
+function CorrectionModal({ setModalInOpen, messageNo, }) {
+  const [PostingW, setPostingW] = useState();
+
+  // const handleLoad = async () => {
+  //   const data = await getData(
+  //     "MyPageCustomer-PostingW",
+  //     "no",
+  //     "==",
+  //     messageNo
+  //   );
+  //   setPostingW(data);
+  // };
+
+  // useEffect(() => {
+  //   handleLoad();
+  // }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const PostingWData = await getDocs(
+        collection(db, "MyPageCustomer-PostingW")
+      );
+      const dataList = PostingWData.docs.map((doc) => doc.data());
+      setPostingW(dataList);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className={style.modalbox} style={{ width: "70rem", height: "45rem" }}>
       <div className={style.header}>
@@ -28,15 +59,10 @@ function CorrectionModal({ setModalInOpen }) {
         <div className={styless.post}>
           <from className={styless.wordBox}>
             <div className={styless.wordTitle}>
-              <h4>냥이들 츄르 나눔합니다!!</h4>
+              <h4>{PostingW?.title}</h4>
             </div>
             <p className={styless.word_p}>
-              며칠 전에 구매한 냥이들 츄르말인데요. <br />
-              최근에 또 냥이 츄르를 선물 받았는데 유통기한은 정해져 있고 ㅠㅜ
-              해서 츄르 몇분께 나눔할려고 합니다!
-              <br />
-              <br />
-              댓글 남겨주세요!!
+            {PostingW?.content}
             </p>
           </from>
 

@@ -5,6 +5,8 @@
 }
 
 .poto {
+  /* width: 45rem; */
+  height: 41.9rem;
   background-color: #d9d9d9;
   display: flex;
   flex-direction: column;
@@ -12,7 +14,6 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  height: 41.9rem;
 }
 
 .span {

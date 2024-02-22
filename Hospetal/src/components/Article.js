@@ -170,13 +170,13 @@ function Article() {
                   />
                 ))}
             </div>
-   {filteredModalDataList.length > visibleItemCount && (
+            <div className="load-more">
+              {filteredModalDataList.length > visibleItemCount && (
                 <div className="load-more-overlay" onClick={loadMoreItems}>
                   <span className="load-more-text">More</span>
                 </div>
               )}
-            </div>            <div className="load-more">
-           
+            </div>
             <Modal
               isOpen={isModalOpen}
               onClose={closeModal}

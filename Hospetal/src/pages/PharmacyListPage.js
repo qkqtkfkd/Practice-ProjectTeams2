@@ -146,9 +146,10 @@ const PharmacyListPage = () => {
         />
       ) : (
         <div className={styles.itemContainer}>
-          {items.map((item) => (
-            <PharmacyItem key={item.docId} pharmacy={item} />
-          ))}
+          {items &&
+            items.map((item) => (
+              <PharmacyItem key={item.docId} pharmacy={item} />
+            ))}
         </div>
       )}
     </div>

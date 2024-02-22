@@ -9,7 +9,6 @@ import haversine from "haversine";
 import styles from "./HospitalListPage.module.css";
 import searchIcon from "../assets/icon/search_icon.svg";
 import stylesBtn from "../components/HospetalButton.module.css";
-import PharmacyItem from "./../components/PharmacyItem";
 import HospitalItem from "./../components/HospitalItem";
 
 const HospitalListPage = () => {
@@ -148,9 +147,10 @@ const HospitalListPage = () => {
         />
       ) : (
         <div className={styles.itemContainer}>
-          {items.map((item) => (
-            <HospitalItem key={item.docId} hospital={item} />
-          ))}
+          {items &&
+            items.map((item) => (
+              <HospitalItem key={item.docId} hospital={item} />
+            ))}
         </div>
       )}
     </div>

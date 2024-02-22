@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./shareIcon.module.css";
 import { FaXTwitter } from "react-icons/fa6";
+import share from "../../assets/img/insta_logo_r__FFC26F.svg";
 
 const TwitterShareButton = () => {
   return (
@@ -11,7 +12,7 @@ const TwitterShareButton = () => {
         data-size="large"
       >
         <img
-          src="/img/insta_logo_r__FFC26F.svg"
+          src={share}
           alt="kakao-share-icon"
           className={styles.kakao__icon}
         />

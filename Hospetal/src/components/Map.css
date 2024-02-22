@@ -58,7 +58,7 @@
   color: #888;
   width: 17px;
   height: 17px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png");
+  background: url("../../src/assets/overlay_close.png");
 }
 .mapInfo .close:hover {
   cursor: pointer;
@@ -99,7 +99,7 @@
   bottom: 45px;
   width: 22px;
   height: 12px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png");
+  background: url("../assets/vertex_white.png");
 }
 .mapInfo .link {
   color: #5085bb;

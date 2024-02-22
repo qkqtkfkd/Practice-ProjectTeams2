@@ -17,9 +17,9 @@ export function MemberProvider({ children }) {
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("member", JSON.stringify(member));
-  }, [member]);
+  // useEffect(() => {
+  //   localStorage.setItem("member", JSON.stringify(member));
+  // }, [member]);
 
   const fetchUserInfo = async () => {
     try {

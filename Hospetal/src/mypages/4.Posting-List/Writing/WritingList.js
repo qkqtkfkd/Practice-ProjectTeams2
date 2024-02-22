@@ -1,42 +1,36 @@
 import React, { useEffect, useState } from "react";
 import CommonTable from "../../table/CommonTable";
+import CommonTableColumn from "../../table/CommonTableColumn";
 import CommonTableRow from "../../table/CommonTableRow";
-import { getMatchingCollections } from "../../../api/firebase";
-import { renderArticleContent } from "../../../api/firebase";
-import WritingModal from "./WritingModal";
+// import { postList } from "./Data";
 import Overlay from "../../Overlay";
+import WritingModal from "./WritingModal";
+
+import { collection, db, firestore, getDocs } from "../../../api/firebase";
 
 const WritingList = (props) => {
-  const [PostingW, setPostingW] = useState([]);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedPosting, setSelectedPosting] = useState(null);
-  
-
   // //////파이어베이스///////////
-
-  async function fetchMessagesByMemberId() {
-    const collections = await getMatchingCollections();
-    if (!Array.isArray(collections)) {
-      console.error('getMatchingCollections did not return an array:', collections);
-      return [];
-    }
-    const messages = collections.map((col) => col.data());
-    return messages;
-  }
-
+  const [PostingW, setPostingW] = useState([]);
   useEffect(() => {
-    fetchMessagesByMemberId().then((data) => {
-      setPostingW(data);
-      console.log(data);
-    });
+    const fetchData = async () => {
+      const PostingWData = await getDocs(
+        collection(db, "MyPageCustomer-PostingW")
+      );
+      const dataList = PostingWData.docs.map((doc) => doc.data());
+      setPostingW(dataList);
+    };
+
+    fetchData();
   }, []);
 
-  // const handleArticleClick = async (articleId) => {
-  //   const articleData = await renderArticleContent(articleId);
-  //   setSelectedPosting(articleData);
-  // };
-
   // ////////모달///////////
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedNo, setSelectedNo] = useState(null);
+
+  const openModal = (no) => {
+    setSelectedNo(no);
+    setModalOpen(true);
+  };
 
   useEffect(() => {
     if (modalOpen) {
@@ -49,36 +43,34 @@ const WritingList = (props) => {
   return (
     <>
       <CommonTable headersName={["", "번호", "제목", "작성글", "작성일"]}>
-        {PostingW.map((item, index) => (
-          <CommonTableRow key={index}>
-            <td>
-              <input type="checkbox" />
-            </td>
-            <td>{index + 1}</td>
-            <td
-              onClick={() => {        
-                // handleArticleClick(item.id);
-                setSelectedPosting(item);
-                console.log(item)        
-                setModalOpen(true);
-              }}
-            >
-              {item.title}
-            </td>
-            <td>{item.category}</td>
-            <td>{item.uploadTime}</td>
-          </CommonTableRow>
-        ))}
+        {PostingW
+          ? PostingW.map((item, index) => {
+              return (
+                <CommonTableRow key={index}>
+                  <CommonTableColumn>
+                    <input type={item.checkbox} />
+                  </CommonTableColumn>
+                  <CommonTableColumn>{item.no}</CommonTableColumn>
+                  <CommonTableColumn>
+                    <p
+                      onClick={() => {
+                        openModal(item.no);
+                      }}
+                    >
+                      {item.title}
+                    </p>
+                  </CommonTableColumn>
+                  <CommonTableColumn>{item.property}</CommonTableColumn>
+                  <CommonTableColumn>{item.createDate}</CommonTableColumn>
+                </CommonTableRow>
+              );
+            })
+          : ""}
       </CommonTable>
 
       {modalOpen && <Overlay modalOpen={modalOpen} />}
       {modalOpen && (
-        <WritingModal
-          setModalOpen={setModalOpen}
-          postingData={selectedPosting}
-          // articleId={selectedPosting.id}
-
-        />
+        <WritingModal setModalOpen={setModalOpen} selectedNo={selectedNo} />
       )}
     </>
   );

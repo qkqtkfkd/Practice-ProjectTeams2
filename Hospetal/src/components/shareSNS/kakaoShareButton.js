@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./shareIcon.module.css";
 import { RiKakaoTalkFill } from "react-icons/ri";
+import share from "../../assets/img/kakao logo_r__FFC26F.svg";
 
 const KakaoShareButton = () => {
   useEffect(() => {
@@ -42,7 +43,7 @@ const KakaoShareButton = () => {
       {/* Kakao share button */}
       <a href="/#" id="kakao-link-btn">
         <img
-          src="/img/kakao logo_r__FFC26F.svg"
+          src={share}
           alt="kakao-share-icon"
           className={styles.kakao__icon}
         />

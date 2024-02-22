@@ -1,8 +1,47 @@
 import styless from "./ShopingModal.module.css";
 import style from "../Modal.module.css";
 import { ReactComponent as Close } from "../../assets/icon/icon-close_w.svg";
+import { useEffect, useState } from "react";
+import {
+  getFirebaseDocument,
+  updateFirebaseDocument,
+} from "../../api/firebase";
 
-function ShopingModal({ shoping, setModalOpen }) {
+function ShopingModal({ shoping, setModalOpen, member }) {
+  const [memberPoint, setMemberPoint] = useState({});
+
+  console.log(memberPoint);
+
+  // 주문하기;
+
+  const handleOrder = async () => {
+    try {
+      // updateFirebaseDocument 함수가 완료될 때까지 대기
+      await updateFirebaseDocument(member);
+
+      // shoping.price를 memberpoint에서 빼고 새로운 포인트로 업데이트
+      const updatedPoint = member.point - shoping.price;
+
+      console.log("Updated Point:", updatedPoint);
+
+      // updateFirebaseDocument로 포인트 업데이트
+      await updateFirebaseDocument({
+        memberId: member?.memberId,
+        point: updatedPoint,
+      });
+
+      // setMemberPoint로 상태 업데이트
+      setMemberPoint(updatedPoint);
+
+      // 모달 닫기
+      setModalOpen(false);
+
+      window.location.reload();
+    } catch (error) {
+      console.error("포인트 업데이트 실패:", error);
+    }
+  };
+
   return (
     <div className={style.modalbox} style={{ width: "65rem", height: "55rem" }}>
       <div className={style.header}>
@@ -23,13 +62,11 @@ function ShopingModal({ shoping, setModalOpen }) {
               <img
                 src={shoping.url}
                 alt={shoping.alt}
-                style={{ objectFit: "contain" }}
+                className={styless.img}
               />
             </figure>
-            <div  className={styless.titlebox}>
             <p className={styless.shopItem}>{shoping.label}</p>
             <p className={styless.shopPrice}>{shoping.price}</p>
-            </div>
           </div>
         )}
 
@@ -99,13 +136,7 @@ function ShopingModal({ shoping, setModalOpen }) {
         </from>
 
         <div className={style.btnbox}>
-          <button
-            className={style.button2}
-            type="submit"
-            onClick={() => {
-              setModalOpen(false);
-            }}
-          >
+          <button className={style.button2} type="submit" onClick={handleOrder}>
             주문하기
           </button>
           <button

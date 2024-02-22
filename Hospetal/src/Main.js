@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./components/App";
+import About from "./components/About";
 import LoginPage from "./components/login/LoginPage";
 import Logout from "./components/Logout";
 import Join from "./components/Join";
@@ -40,7 +41,7 @@ import MyPet from "./mypages/2.MyPet-List/MyPet";
 import Reservation from "./mypages/3.Reservation-List/Reservation";
 import Writing from "./mypages/4.Posting-List/Writing/Writing";
 import Review from "./mypages/4.Posting-List/Review/Review";
-import Inquiry from "./mypages/4.Posting-List/Inquiry/Inquiry";
+import Inquiry from "./mypages/4.Posting-List/Inquiry";
 import MessageReceived from "./mypages/5.Message-List/Received/MessageReceived";
 import SentMessage from "./mypages/5.Message-List/Sent/SentMessage";
 import Point from "./mypages/6.Point-List/Point";
@@ -52,7 +53,7 @@ import AboutPage from "./pages/AboutPage";
 import Homepage from "./pages/Homepage";
 import MaPage from "./pages/MaPage";
 import CompanyInformation1 from "./components/CompanyInformation1";
-import ReservationList from "./components/ReservationList";
+import ReservationList from "./components/LgReservationList";
 import BoardManagement from "./components/BoardManagement";
 
 function Main() {
@@ -71,7 +72,7 @@ function Main() {
   }, []);
 
   return (
-    <BrowserRouter basename={process.ebv.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />}>

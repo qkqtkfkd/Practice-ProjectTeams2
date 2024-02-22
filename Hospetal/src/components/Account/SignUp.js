@@ -289,7 +289,7 @@ function SignUp() {
                 <label htmlFor="id">아이디</label>
               </div>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="id"
                 name="id"
@@ -316,7 +316,7 @@ function SignUp() {
                 <label htmlFor="name">이름</label>
               </div>
             </th>
-            <td>
+            <td className="td">
               <input id="name" name="name" onChange={onChangeName} />
             </td>
           </tr>
@@ -326,7 +326,7 @@ function SignUp() {
                 <label htmlFor="password">비밀번호</label>
               </div>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="password"
                 name="password"
@@ -346,7 +346,7 @@ function SignUp() {
                 <label htmlFor="passwordConfirm">비밀번호 확인</label>
               </div>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="passwordConfirm"
                 name="passwordConfirm"
@@ -366,7 +366,7 @@ function SignUp() {
                 <label htmlFor="nickname">닉네임</label> <br />
               </div>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="nickname"
                 name="nickname"
@@ -392,7 +392,7 @@ function SignUp() {
                 <label htmlFor="email">이메일</label>
               </div>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="email"
                 name="name"
@@ -430,7 +430,7 @@ function SignUp() {
             <th scope="row">
               <label htmlFor="phone">연락처</label>
             </th>
-            <td>
+            <td className="td">
               <input
                 id="phone"
                 name="phone"
@@ -438,19 +438,13 @@ function SignUp() {
                 ref={phoneRef}
                 onChange={handlePhone}
               />
-              <input
-                type="button"
-                className="member-btn"
-                id="nick_ajax"
-                value="본인인증"
-              />
             </td>
           </tr>
           <tr>
             <th scope="row">
               <label>주소</label>
             </th>
-            <td>
+            <td className="td">
               <Adress />
             </td>
           </tr>

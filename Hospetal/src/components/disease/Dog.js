@@ -7,6 +7,7 @@ import DiseaseTitleIcon from "./DiseaseTitleIcon";
 import dogCursor from "../../assets/mouse_dog.png";
 import dogCursorActive from "../../assets/mouse_dog_after.png";
 import styled from "styled-components";
+import foot from "../../assets/img/발바닥_or.png";
 
 const Cursor = styled.div`
   cursor: url(${dogCursor}) 20 30, auto;
@@ -92,10 +93,7 @@ function Dog() {
               <Link to="/hospital" className={styles.linkButton}>
                 <button className={styles.bottomButton}>
                   병원 예약하기
-                  <img
-                    className={styles.bottomButtonImg}
-                    src="/img/발바닥_or.png"
-                  />
+                  <img className={styles.bottomButtonImg} src={foot} />
                 </button>
               </Link>
             </div>

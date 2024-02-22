@@ -7,6 +7,7 @@ import {
   faArrowAltCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import main from "../../assets/img/mainimage2.png";
 
 const Home = () => {
   const url = window.location.href;
@@ -23,7 +24,7 @@ const Home = () => {
             <p>가장 잘 어울리는 유형을 찾아드려요!</p>
           </div>
           <div className={styles.top}>
-            <img className={styles.logo} src="img/mainimage2.png" alt="로고" />
+            <img className={styles.logo} src={main} alt="로고" />
           </div>
           <div className={styles.bottom}>
             <Link to="/petBTI" className={styles.start__button}>
