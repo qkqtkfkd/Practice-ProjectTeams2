@@ -1,0 +1,22 @@
+.common_table {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-spacing: 0;
+}
+
+.common_table_header_column {
+  border-bottom: 2px solid #ff8b50;
+  border-top: 2px solid #ff8b50;
+  padding: 1.5rem 3rem;
+  font-weight: bold;
+}
+
+.common_table_column {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #ff8b50;
+}
+
+td {
+  width: 25% !important;
+}
